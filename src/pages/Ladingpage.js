@@ -1,4 +1,5 @@
 import React from 'react'
+import reactDom from 'react-dom'
 import NavbarLP from '../components/NavbarLP'
 import layer2 from "../images/layer2.png"
 import layer3 from "../images/layer3.png"
@@ -11,30 +12,32 @@ import { AiOutlineClose } from 'react-icons/ai'
 import { FiHeart } from 'react-icons/fi'
 import fotodiza from "../images/fotodiza.jpg"
 import Footer from '../components/Footer'
+import sycnfest from "../images/syncfest.png"
 
 const ladingpage = () => {
     return (
-        <div className="body">
-            <NavbarLP/>
-            <div className="borderBoxLP">
-
+        <div className="bodyLP">
+            <NavbarLP/> 
                 <div className="heroLP mx-auto">
                     <div className="boxHeading">
-                        <p className="heading">
-                            <span className="typed-words" style={{justifyContent:'center', display:"flex", textAlign:"center"}}>
-                                #Bikin Nyata Ide Kreatif <br/> Yang Kalian Impikan
-                            </span>
-                        </p>
+                        <div className="imagesHead mx-auto">
+                            <img mx-auto src={sycnfest}/>
+                        </div>
+                        <div className="heading">
+                            <p>#Bikin Nyata Ide Kreatif Yang Kalian Impikan</p>
+                        </div>
+                        {/* <div className="heading">
+                            <p>Yang Kalian Impikan</p>
+                        </div> */}
+                        <div className="btnHead">
+                            <button className="button1">BOOST CAMPAIGN </button>
+                            <button className="button2">BIKIN CAMPAIGN </button>
+                        </div>
                     </div>
-                    <div style={{position:"absolute", marginTop:"250px"}}>
-                        <button className="button1">BOOST CAMPAIGN </button>
-                        <button className="button2">BIKIN CAMPAIGN </button>
-                    </div>
-
                 </div>
                 <div className="layerLP mx-auto">
                     <div className="layerPict">
-                        <img className="pict"src={layer2}/>
+                        <img src={layer2}/>
                     </div>
                     <div className="layerTxt">
                         Kolektive adalah sebuah platform event organizer dan crowdfunding khusus untuk event. Galang dana bersama untuk mendukung event yang kalian harapkan.
@@ -57,22 +60,21 @@ const ladingpage = () => {
                     </div>
                     <button> Learn More </button>
                     <div className="layer1Pict">
-                        {/* <img src={layer3}/> */}
                         <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                <li data-target="slide" data-slide-to="0" className="active"></li>
+                                <li data-target="slide1" data-slide-to="1" className="active"></li>
+                                <li data-target="#carouselExampleIndicators" className="active"></li>
                             </ol>
                         </div>
                         <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
 
                             <div className="carousel-inner">
                                 <div className="carousel-item active">
-                                    <img classsName="d=block w-100" src={layer3} alt="First Slide"/>
+                                    <img classsName="d-block w-100" src={layer3} alt="First Slide"/>
                                 </div>
-                                <div className="carousel-item ">
-                                    <img classsName="d=block w-100" src={layer2} alt="First Slide"/>
+                                <div className="carousel-item">
+                                    <img classsName="d-block w-100" src={layer2} alt="Second Slide"/>
                                 </div>
                             </div>
                             <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -183,7 +185,6 @@ const ladingpage = () => {
                     </div>
                    
                 </div>
-            </div>
             <Footer/>
         </div>
     )
